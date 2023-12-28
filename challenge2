@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>양식을 만들고 입력정보를 보내자</title>
+</head>
+<style>
+fieldset {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+@media (max-width: 600px) {
+    form {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+h1 {
+    color: #007bff;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+</style>
+<body>
+
+    <h1>설문조사 양식</h1>
+    <p>모든 항목에 빠짐없이 체크해주십시오.</p> 
+    <hr>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>개인 정보</legend>
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" required>
+
+            <br>
+
+            <label for="email">이메일주소</label>
+            <input type="email" id="email" name="email" required>
+            <select id="email-domain" name="email-domain" required>
+                <option value="@gmail.com">@gmail.com</option>
+                <option value="@naver.com">@naver.com</option>
+                <option value="@yahoo.com">@yahoo.com</option>
+                <option value="@nate.com">@nate.com</option>
+                <option value="@kakao.com">@kakao.com</option>
+                <option value="@narasarang.or.kr">@narasarang.or.kr</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>설문</legend>
+            <br>
+            <label>연령대가 어떻게 되십니까?</label> <br><br>
+            <input type="radio" id="teen" name="age" value="teen" required>
+            <label for="teen">10대</label>
+
+            <input type="radio" id="twenty" name="age" value="twenty" required>
+            <label for="twenty">20대</label>
+
+            <input type="radio" id="thirty" name="age" value="thirty" required>
+            <label for="thirty">30대</label>
+
+            <input type="radio" id="forty" name="age" value="forty" required>
+            <label for="forty">40대</label>
+
+            <input type="radio" id="fifty" name="age" value="fifty" required>
+            <label for="fifty">50대</label>
+
+            <input type="radio" id="other" name="age" value="other" required>
+            <label for="other">기타</label>
+
+            <br>
+            <br>
+
+            <label>학원을 선택할 때 가장 중요하게 생각하는 것은 무엇입니까? 모두 고르시오.</label> <br><br>
+            <input type="checkbox" id="color1" name="academy" value="red">
+            <label for="color1">위치</label>
+
+            <input type="checkbox" id="color2" name="academy" value="blue">
+            <label for="color2">학원비</label>
+
+            <input type="checkbox" id="color3" name="academy" value="green">
+            <label for="color3">강사</label>
+
+            <input type="checkbox" id="color3" name="academy" value="green">
+            <label for="color3">시설</label>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>기타 의견</legend>            
+            <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+        </fieldset>
+
+        <input type="submit" value="제출">
+    </form>
+
+    <hr>
+
+    <p>입력하시느라 수고하셨습니다.</p>
+
+</body>
+</html>
