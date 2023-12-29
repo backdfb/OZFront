@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입2</title>
+</head>
+<style>
+    button, input[type="button"] {
+        margin-right: 10px; 
+    }
+</style>
+<body>
+    <h1>회원가입</h1>
+    <fieldset>
+        <legend>필수 입력 사항</legend>
+        <ul>
+            <li>
+                <label for="name">이름:</label>
+                <input type="text" id="name">
+            </li>
+            <li>
+                <label for="id">아이디:</label>
+                <input type="text" id="id" placeholder="6자 이상 20자 미만 공백 없이">
+            </li>
+            <li>
+                <label for="password">비밀번호:</label>
+                <input type="text" id="password" placeholder="대소문자로 입력해주세요">
+            </li>
+            <li>
+                <label for="email">이메일:</label>
+                <input type="text" id="email">  
+            </li>
+            <li>
+                <label for="cellphone">휴대폰:</label>
+                <input type="text" id="cellphone">
+            </li>
+        </ul>
+        <button>가입하기</button>
+        <input type="button" value="취소">
+    </fieldset>
+    <fieldset>
+        <legend>취미</legend>
+        <ul>
+            <li>
+                <input type="checkbox" id="coding" name="hobby" value="coding">
+                <label for="coding">코딩</label>
+
+                <input type="checkbox" id="exercise" name="hobby" value="exercise">
+                <label for="exercise">운동</label>
+
+                <input type="checkbox" id="breath" name="hobby" value="breath">
+                <label for="breath">숨쉬기</label>
+
+                <input type="checkbox" id="travel" name="hobby" value="travel">
+                <label for="travel">여행</label>
+
+                <input type="checkbox" id="sleeping" name="hobby" value="sleeping">
+                <label for="sleeping">잠자기</label>
+
+                <input type="checkbox" id="reading" name="hobby" value="reading">
+                <label for="reading">독서</label>
+
+                <input type="checkbox" id="netflex" name="hobby" value="netflex">
+                <label for="netflex">넷플시청</label>
+            </li>
+            <li>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">남</label>
+
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">여</label>
+
+                <input type="radio" id="secret" name="gender" value="secret" required>
+                <label for="secret">비밀</label>
+            </li>
+        </ul>
+    </fieldset>
+</body>
+</html>
