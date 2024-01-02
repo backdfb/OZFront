@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다이어리</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, white, whitesmoke, yellow, yellowgreen, skyblue); 
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            color: magenta;
+            padding: 10px;
+            border: 1px solid green;
+            border-radius: 15px;
+            width: 1000px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .diary-entry1 {
+            width: 300px;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid green;
+            width: 1000px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .date {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .content {
+            color: grey;
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        .gauge {
+            margin-top: 10px;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <h1>실습용 다이어리</h1>
+    <img src="../images/goora.jpeg">
+    <div class="diary-entry1">
+        <h2 class="date" style="font-size: 30px;">2024년 1월 3일</h2>
+        <p class="content">새해 첫 평일이 지났지만 그렇게 큰 일은 없다. <br>
+        단지 달라진 것은 풀스택에 이어서, 아예 프론트엔드 과정으로 사실상 전향했다는 것? <br>
+        확실히 독학할 때 보다는 잘 된다. <br>
+        그런데, 지금의 이 과정은 뭔가 다르긴 하다. <br>
+        엄밀히 말하면 평소엔 인강으로 자습하는게 위주인데, 세부적으로는 그것도 아닌것이, 조교님들이 수시로 질문에 답변도 해주고, <br>
+        정기적으로는 멘토님들도 질의응답 형식으로 강의도 하시니...    <br>
+        그 동안 <mark>실패의 연속</mark>이던 내 인생. 이번에는 꼭 <u>성공</u>해서 이루자.
+        </p>
+        <br>
+        <hr>
+        <br>
+        <div class="gauge">
+            <label for="progress">진행 상황:</label>
+            <input type="range" id="progress" name="progress" value="20" min="0" max="100">
+        </div>
+    </div>
+
+</body>
+</html>
