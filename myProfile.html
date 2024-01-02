@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 프로필</title>
+    <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
+</head>
+<style>
+
+    * {
+        background-color: blanchedalmond;
+    }
+
+   .profile {
+        text-align: center;
+    }
+
+    .intro {
+        text-align: center;
+    }
+
+    main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid whitesmoke; /* 원하는 테두리 스타일 및 색상으로 설정 */
+    border-width: 10px 10px;
+    border-radius: 20px; /* 원하는 테두리 둥글기 설정 */
+    background-color:bisque;
+    padding: 20px; /* 원하는 안쪽 여백 설정 */
+    width: 500px; 
+    margin: auto;
+    }
+
+    main ol {
+    margin-top: 15px; /* 원하는 간격 설정 */
+    margin-bottom: 5px; /* 원하는 간격 설정 */
+    background-color:bisque;
+    }
+
+    main ol li {
+    margin-bottom: 15px; /* 원하는 간격 설정 */
+    background-color:bisque;
+    }
+
+    img {
+    width: 400px;
+    height: 300px;
+    display: block;
+    margin:0 auto;
+    }
+
+    span {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    }
+
+
+</style>
+<body>
+    <br>
+    <h1 class="profile">김 효 중</h1>
+    <img src="https://ozcodingschool.com/static/front/images/ozcoding/startupcamp/pc_main.png" width="400px" height="300px">
+    <nav class="intro">
+        <p>모두들 안녕</p>
+        <p>난 프론트엔드 개발자 준비중이야.</p>
+        <p>내 이름은... 알지?</p>
+    </nav>
+
+    <main>
+        <ol>
+            <li>1985년 01월 28일 생</li>
+            <li>새로운 것에 대한 호기심이 <strong>좀 있음</strong></li>
+            <li><mark>요리 좋아함</mark></li>
+            <li>현재 oz초격차캠프 프론트엔드 과정 입교하여 공부중</li>
+        </ol>
+    </main>
+    <br>
+    <span>&copy; 김효중 profile 0.1 update</span>
+</body>
+</html>
