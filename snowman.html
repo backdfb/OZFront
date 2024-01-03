@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>snowman</title>
+</head>
+<style>
+    * {
+        background-color: cyan;
+    }
+
+    .wrapper {
+        position: relative;
+        height: 100vh;
+    }
+
+    .circle1, .circle2, .circle3 {
+        background-color: white;
+        position: absolute;
+        left: 50%;
+    }
+
+    .circle1 {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        top: calc(30% - 30px);
+        left: calc(50% - 30px);
+        position: relative;
+        display: flex; 
+    }
+
+    .mouth {
+        background-color: red;
+        position: absolute; 
+        width: 25px;
+        height: 3px;
+        top: 31%; 
+        left: 49%;
+        z-index: 11;
+    }
+
+    .circle2 {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        top: 31%;
+        left: 48%;
+    }
+
+    .circle3 {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        top: 37%;
+        left: 47%;
+        z-index: 10;
+    }
+
+    .eye1, .eye2 {
+        background-color: black;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: relative;
+    }
+
+    .eye1 {
+        top: 12px;
+        left: 13px;
+    }
+
+    .eye2 {
+        top: 17px;
+        left: 26px;
+    }
+
+    .land {
+        background-color: beige;
+        width: 100%;
+        height: 55%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .shadow {
+        background-color: rgba(0, 0, 0, 0.2); 
+        width: 200px;
+        height: 30px; 
+        position: absolute;
+        bottom: 470px;
+        left: 49%;
+        border-radius: 50%; 
+        z-index: 9; 
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <div class="circle1">
+            <div class="eye1"></div>
+            <div class="eye2"></div>
+        </div>
+        <div class="mouth"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+    </div>
+    <footer class="land">
+        <div class="shadow"></div>
+    </footer>
+</body>
+</html>
