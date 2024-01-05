@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'San Francisco','Noto Sans KR', sans-serif;
+    color: #1d1d1f;
+}
+
+body:lang(ko) {
+    line-height: 1.58824;
+    font-family: SF Pro KR,SF Pro Text,SF Pro Icons,AOS Icons,Apple Gothic,HY Gulim,MalgunGothic,HY Dotum,Lexi Gulim,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.container{
+    background-color: #f5f5f7;
+}
+
+.container2{
+    background-color: white;
+}
+
+.title-heading {
+    margin-top: 80px;
+    margin-left: 80px;
+    font-size: 40px;
+}
+
+.title-price {
+    margin-top: 5px;
+    margin-left: 80px;
+}
+
+.nav {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.nav-list {
+    display: flex;     
+    justify-content: center; 
+    align-items: center;     
+    list-style: none;        
+    padding: 0;  
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.nav-list-mobile {
+    display: none; 
+}
+
+.nav-list-larger {
+    flex-grow: 1; 
+}
+
+.nav-item {
+    margin: 0; 
+}
+
+.nav-link {
+    display: block; 
+    padding: 10px 15px; 
+    text-decoration: none; 
+    color: #000; 
+}
+
+a{
+    text-decoration: none;
+    color: #1d1d1f;
+}
+
+.container2_1 {
+    display: flex; 
+    height: 1px; 
+    justify-content: flex-end;
+    align-items: center; 
+    font-size: 13px;
+}
+
+.lowprice {
+    border-radius: 30px;
+    border: 16px solid #f5f5f7;
+    background-color: #f5f5f7;
+    margin-right: 80px;
+}
+
+.card {
+    width: 120px;
+    border-radius: 30px;
+    border: 15px solid #f5f5f7;
+    background-color: #f5f5f7;
+    margin-left: 155px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    margin-top: 85px;
+    margin-left: 80px;
+    width: 1150px;
+    height: 700px;
+    border-radius: 30px;
+}
+
+ul {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+span {
+    color: gray;
+}
+
+.color_choice {
+    display: flex; 
+    justify-content: flex-end;
+    align-items: center; 
+    font-size: 23px;
+    margin-right: 150px;
+    margin-top: -420px;
+}
+
+.color_choice2 {
+    font-size: 15px;
+    margin-left: 1270px;
+}
+
+.color_items {
+    display: flex; /* float 대신 flexbox를 사용하여 가로 정렬을 합니다. */
+    list-style: none;
+    padding: 0;
+    margin-top: -60px;
+    justify-content: center;
+    position: absolute;
+    right: 325px;
+  }
+  
+  .color_item {
+    margin-right: -70px; /* 우측 간격을 5px로 조정합니다. */
+    justify-content: left;
+  }
+  
+  .color_item:last-child {
+    margin-right: 0; 
+  }
+
+.color-value {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+}
+
+.color-value:checked~.color-link {
+    border-color: #0071e3;
+    cursor: default;
+}
+
+.color-swatch {
+    background-color: #f5f5f7 50%;
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+
+.color-swatch:after {
+    border-radius: inherit;
+    box-shadow: inset 0 2px 2px gray;
+    content: "";
+    display: block;
+    height: inherit;
+    position: absolute;
+    width: inherit;
+}
+
+.rc-dimension-color-link img {
+    border-radius: 50%;
+}
+
+.color_item_productred {
+    display: flex;
+    margin-top: 30px;
+    position: absolute;
+    right: 90px;
+    display: inline-block;
+    list-style: none;
+    padding: 30px 8px;
+}
+
+.rf-bfe-dimension .color-item {
+    margin: 4px 5px 4px 0;
+}
+
