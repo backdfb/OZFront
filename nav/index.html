@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 16px;
+        }
+        body {
+            margin: 0px;
+        }
+        .flex {
+            display: flex;
+        }
+    </style>
+
+    <link rel="stylesheet" href="header.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content flex">
+                <div class="header-content_logo">광어시장</div>
+                <nav class="header-content_nav flex">       
+                    <ul>
+                        <li>소개</li>
+                        <li class="active">새상품</li>
+                        <li>구직</li>
+                        <li>구인</li>
+                        <li>실시간 매매가</li>
+                    </ul>
+                </nav>             
+                <div class="header-content_input flex">
+                    <span class="icon glass">
+                        <input type="text" value="&#128269;">
+                    </span>
+                    <span>
+                        <input type="text" class="search" placeholder="무엇이든 검색해보세요">
+                    </span>
+                    <span class="icon menu">
+                        <input type="checkbox" button id="drop" value="&#9776;"></input>
+                            <label for="drop">&#9776;</label>
+                            <div class="sub">
+                                <a>소개</a>
+                                <a>새상품</a>
+                                <a>구직</a>
+                                <a>구인</a>
+                                <a>실시간 매매가</a>
+                            </div>
+                    </span>
+                    <span>
+                        <input type="button" class="chat" value="채팅ㄱㄱ">
+                    </span>
+                </div>
+            </div> 
+        </header>
+    </div>
+</body>
+</html>
