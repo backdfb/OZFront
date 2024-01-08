@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewh3ort" content="width=device-width, initial-scale=1.0">
+    <title>반응형 실습</title>
+</head>
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .main {
+        width: 100vw;
+        height: 100vh;
+        background-color: yellow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        text-align: center;
+    }
+
+    .normal, .start, .more, .more2, .finish {
+        display: none;
+    }
+
+    @media screen and (max-width : 1280px){
+        
+        h2 {
+            display: none;
+        }
+
+        .main{
+            background-color: tomato;
+        }
+
+        .normal{
+            display: block;
+            color: whitesmoke;
+        }
+
+    }
+    @media screen and (max-width : 1024px){
+
+        .main{
+            background-color: skyblue;
+        }
+
+        .normal{
+            display: none;
+        }
+
+        .start{
+            display: block;
+            color: whitesmoke;
+        }
+
+    }
+    @media screen and (max-width : 900px){
+
+        .main{
+            background-color: magenta;
+        }
+
+        .start{
+            display: none;
+        }
+
+        .more{
+            display: block;
+            color: whitesmoke;
+        }
+
+    }
+    @media screen and (max-width : 680px){
+
+        .main{
+            background-color: yellowgreen;
+        }
+
+        .more{
+            display: none;
+        }
+
+        .finish{
+            display: block;
+            color: whitesmoke;
+        }
+
+    }
+
+</style>
+<body>
+    <main class="main">
+        <div>
+            <h2>이것은 반응형 웹 실습입니다.</h2>
+            <ul>
+                <li class="normal">
+                    <h3>창을 줄여봅시다.</h3>
+                </li>
+                <li class="start">
+                    <h3>자바스크립트 없이</h3>
+                </li>
+                <li class="more">
+                    <h3>잘하고 있어요</h3>
+                </li>
+                <li class="finish">
+                    <h3>여기까지!!!</h3>
+                </li>
+            </ul>
+        </div>
+        
+    </main>
+</body>
+</html>
