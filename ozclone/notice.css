@@ -1,0 +1,53 @@
+.notice {
+    max-width: 48rem;
+    margin: auto;
+}
+
+.notice_title {
+    font-size: 1.625rem;
+    margin: 3.75rem -2;
+    line-height: 1.5;
+    color: gray;
+}
+
+.notice_small {
+    font-size: 0.785rem;
+    margin: 0rem;
+    line-height: 1.5;
+    color: blue;
+}
+
+.notice_container {
+    justify-content: space-between;
+    flex-wrap: wrap; 
+}
+
+.notice_item {
+    padding: 1.25rem 0;
+    flex-basis: 48%; /* container 크기의 기준으로*/
+}
+
+.notice_thumb {
+    min-width: 6.75rem;
+    min-height: 6.75rem;
+    background-image: linear-gradient(to top, black, green);
+}
+
+.notice_content {
+    margin-left: 1rem;
+}
+
+.notice_content_title {
+    line-height: 1.32;
+    font-size: 1.125rem;
+}
+
+.notice_content_name {
+    line-height: 1.4;
+    font-size: .875rem;
+    color: blueviolet;
+}
+
+.notice_content_price {
+    font-weight: 700;
+}

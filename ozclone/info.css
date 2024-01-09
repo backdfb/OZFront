@@ -1,0 +1,43 @@
+.info {
+    width: 100%;
+    height: 23.6875rem;
+    background-image: linear-gradient(to top, black, green);
+    margin-top: -30px;
+    z-index: 97px;
+}
+
+.info_text {
+    max-width: 48rem;
+    margin-left: 16.325rem;
+    padding: 3rem 1rem 0;
+    color: white;
+}
+
+.info_text h1{
+    margin: 0;
+    font-size: 2rem;
+    line-height: 3.2rem;
+}
+
+.info_text p {
+    margin: 1.5rem 0 0rem;
+    font-size: 0.925rem;
+    line-height: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .info {
+        height: 18.375rem;
+    }
+    .info_text {
+        padding: 1.5rem 1rem 0;
+    }
+    .info_text h1 {
+        line-height: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .info_text p {
+        display: none;
+    }
+}
