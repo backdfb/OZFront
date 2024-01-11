@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>이리오너라! 아무도 없느냐</h1>
+    <button onclick="darkMode()" id="button">Dark Mode</button>
+
+    <script>
+        function darkMode() {
+            const body = document.body;
+            body.classList.toggle("dark-Mode");
+
+            const button = document.getElementById("button");
+            if(button.innerHTML == "Dark Mode") {
+              button.innerHTML = "Light Mode";
+              body.style.backgroundColor = "black";
+              body.style.color = "white";
+            } else {
+              button.innerHTML = "Dark Mode";
+              body.style.backgroundColor = "white";
+              body.style.color = "black";
+            }
+        }
+    </script>
+</body>
+</html>
