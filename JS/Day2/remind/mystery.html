@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: gray;
+            color: whitesmoke;
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        #userInput {
+            border-radius: 15px 15px 15px 15px;
+            border: 1px solid magenta;
+            height: 50px;
+            width: 190px;
+        }
+
+        #guessButton {
+            margin-left: 15px;
+            height: 50px;
+            width: 100px;
+            font-size: larger;
+            border-radius: 15px 15px 15px 15px;
+            background-color: yellowgreen;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>미스테리 숫자 맞추기</h1>
+    <p>1부터 100 사이의 숫자를 입력하세요!</p> <br>
+    <input id="userInput" type="text">
+    <button id="guessButton" onclick="checkNum()">뚜둥!</button>
+    <p id="hint"></p>
+
+    <script>
+        let randomNum = Math.floor(Math.random() * 100 +1);
+
+        function checkNum() {
+            let userInput = document.getElementById("userInput").value;
+            let hint = document.getElementById("hint");
+
+            if(userInput == randomNum) {
+                hint.textContent = "축하해! 정답이양!";
+            } else if(userInput > randomNum) {
+                hint.textContent = "좀 더 적게 불러봐봐~.";
+            } else {
+                hint.textContent = "간 좀 키우고 더 많이 불러봐봐~.";
+            }
+        }
+    </script>
+</body>
+</html>
