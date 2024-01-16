@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="signup-form" action="" method="post" onsubmit="handleSubmit(event)"> 
+    <table class="centered-table">
+        <tbody>
+        <tr>
+            <td align="right">아이디</td>
+            <td><input size="15" type="text" name="id" id="userId" style="width: 195px; height: 24px;" placeholder="아이디"></td>
+        </tr>
+        <tr>
+            <td align="right">비밀번호</td>
+            <td><input size="15" type="password" name="password" style="width: 195px; height: 24px;" placeholder="비밀번호"></td>
+        </tr>
+        <tr>
+            <td align="right">비밀번호 확인</td>
+            <td><input size="15" type="password" name="password_check" style="width: 195px; height: 24px;" placeholder="비밀번호"></td>
+        </tr>
+        <tr>
+            <td align="right">이름</td>
+            <td><input type="text" name="name" id="userName" style="width: 195px; height: 24px;" placeholder="사용자 이름"></td>
+        </tr>
+        <tr>
+            <td align="right">전화번호</td>
+            <td><input type="text" name="phone" id="userPhone" style="width: 195px; height: 24px;" placeholder="휴대전화번호"></td>
+        </tr>
+        <tr>
+            <td align="right">원하는 직무</td>
+            <td>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <span class="dropbtn_icon"></span><span id="selectedPosition">미정</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="selectPosition(event, 'userPosition')">userPosition</a>
+                        <a href="#" onclick="selectPosition(event, '미화')">미화</a>
+                        <a href="#" onclick="selectPosition(event, '보안')">보안</a>
+                    </div>
+                </div>
+                <input type="hidden" id="userPosition" name="userPosition" value="미정">
+            </td>
+        </tr>
+        <tr>
+            <td align="right">성별</td>
+            <td>
+            <input id="male" type="radio" value="남자" name="male" checked><label for="male">남자</label> 
+            <input style="margin-left: 10;" id="female" type="radio" value="여자" name="female"><label for="female">여자</label>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">이메일</td>
+            <td><input type="text" name="mail" style="width: 195px; height: 24px;"></td>
+        </tr>
+        <tr>
+            <td align="right">자기소개</td>
+            <td><textarea cols="50" style="margin: 0px; height: 200px; width: 480px; resize: none"></textarea></td>
+        </tr>
+        </tbody>
+    </table>  
+    <div class="in">
+        <input type="submit" value="가입" class="submitBtn"> 
+        <input type="reset" value="리셋" class="resetBtn"> 
+    </div> 
+
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function selectPosition(event, position) {
+            event.preventDefault(); // 링크의 기본 동작을 취소
+            document.getElementById('selectedPosition').textContent = position; // 버튼의 텍스트를 업데이트
+            document.getElementById('userPosition').value = position; // 숨겨진 필드의 값을 업데이트
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault(); 
+
+            let userId = document.getElementById('userId').value;
+            let userName = document.getElementById('userName').value;
+            let userPhone = document.getElementById('userPhone').value;
+            let userPosition = document.getElementById('userPosition').value;
+
+            // 결과 출력
+            let resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<h2>' + userId + '님 환영합니다.</h2>' +
+                                  '<p>회원 가입 시 입력하신 내역은 다음과 같습니다.</p>' +
+                                  '<ul>' +
+                                  '<li>아이디: ' + userId + '</li>' +
+                                  '<li>이름: ' + userName + '</li>' +
+                                  '<li>전화번호: ' + userPhone + '</li>' +
+                                  '<li>원하는 직무: ' + userPosition + '</li>' +
+                                  '</ul>';
+        }
+    </script>
+
+</body>
+</html>
