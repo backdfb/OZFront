@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단표</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 90px;
+        }
+
+        table {
+            width: 50%;
+            border-collapse: collapse; /* 상쇄, 테두리 공유 */
+            margin: auto;
+            margin-top: 30px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 7px;
+        }
+
+        th {
+            background-image: linear-gradient(to bottom, hotpink, orange, pink, yellow);
+        }
+    </style>
+</head>
+<body>
+    <h2>구구단을 외자</h2>
+    <table id="multi"></table>
+    <script>
+        const table = document.getElementById('multi');
+
+        let header = '<tr>';
+            for (let i = 2; i <= 9; i++) {
+                header += '<th>' + i + '단</th>';
+        }
+        header += '</tr>';
+        table.innerHTML = header;
+
+        for (let i = 1; i <= 9; i++) {
+            let row = '<tr>'; // 각 행을 시작합니다.
+            for (let j = 2; j <= 9; j++) {
+                row += '<td>' + j + ' × ' + i + ' = ' + (j*i) + '</td>';
+            }
+            row += '</tr>'; // 각 행을 닫습니다.
+            table.innerHTML += row; // 생성된 행을 테이블에 추가합니다.
+        }
+    </script>
+</body>
+</html>
