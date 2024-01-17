@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+    <style>
+
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 50px;
+        }
+
+        .wrap {
+            margin: 100px 0 90px 690px;
+            width: 300px;
+            height: 400px;
+            border: 1px solid transparent;
+            background-color: yellow;
+            border-radius: 5px;
+            padding: 0.3%;
+        }
+
+        .input {
+            height: 20px;
+            text-align: right;
+        }
+
+        .display {
+            display: flex;
+            flex-direction: column;
+            height: 50px;
+            font-size: 36px;
+            font-weight: 700;
+            border: 1px solid black;
+            margin: 5px 5px 0 5px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgb(105, 147, 43);
+            color: #fff;
+        }
+
+        .cal_button {
+            padding: 5px;
+            display: grid;
+            height: calc(100% - 85px);
+            gap: 5px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        button {
+            color: #fff;
+            font-size: 36px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .numBtn {
+            background-color: #828284;
+        }
+
+        .operator, .result, .allClear {
+            background-color: rgba(224, 154, 25, 0.847);
+        }
+    </style>
+</head>
+<body>
+    <h2>Click My Calculator</h2>
+    <div class="wrap">
+        <div class="display">
+            <div class="input"></div>
+        </div>
+        <div class="cal_button">
+            <button class="allClear" data-type="allClear">C</button>
+            <button data-type='operator' class='operator'>+</button>
+            <button data-type='operator' class='operator'>-</button>
+            <button data-type='operator' class='operator'>x</button>
+            <button class='numBtn'>7</button>
+            <button class='numBtn'>8</button>
+            <button class='numBtn'>9</button>
+            <button data-type='operator' class='operator'>/</button>
+            <button class='numBtn'>4</button>
+            <button class='numBtn'>5</button>
+            <button class='numBtn'>6</button>
+            <button data-type='result' class='result'>=</button>
+            <button class='numBtn'>1</button>
+            <button class='numBtn'>2</button>
+            <button class='numBtn'>3</button>
+            <button class='numBtn'>0</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let inputDiv = document.querySelector('.input');
+            let currentInput = '';
+            let operator = '';
+            let operand1 = null;
+            let operand2 = null;
+    
+            // 숫자 버튼 클릭 
+            document.querySelectorAll('.numBtn').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    currentInput += this.textContent;
+                    inputDiv.textContent = currentInput;
+                });
+            });
+    
+            // 연산자 버튼 클릭 
+            document.querySelectorAll('.operator').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    if (currentInput) {
+                        operand1 = currentInput;
+                        currentInput = '';
+                    }
+                    operator = this.textContent;
+                });
+            });
+    
+            // 결과 버튼(=) 클릭 
+            document.querySelector('.result').addEventListener('click', function() {
+                if (currentInput) {
+                    operand2 = currentInput;
+                    var result = calculate(parseFloat(operand1), parseFloat(operand2), operator);
+                    inputDiv.textContent = result;
+                    operand1 = result; // 다음 계산을 위해 결과를 operand1에 저장
+                    currentInput = ''; // 현재 입력을 초기화
+                }
+            });
+    
+            // 모두 지우기(C) 버튼 클릭 
+            document.querySelector('.allClear').addEventListener('click', function() {
+                currentInput = '';
+                operand1 = null;
+                operand2 = null;
+                operator = '';
+                inputDiv.textContent = '';
+            });
+    
+            // 계산 함수
+            function calculate(operand1, operand2, operator) {
+                switch(operator) {
+                    case '+': return operand1 + operand2;
+                    case '-': return operand1 - operand2;
+                    case 'x': return operand1 * operand2;
+                    case '/': return operand1 / operand2;
+                }
+            }
+        });
+    </script>
+    
+</body>
+</html>

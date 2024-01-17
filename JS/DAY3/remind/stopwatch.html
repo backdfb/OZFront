@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스톱워치</title>
+</head>
+<body>
+    
+    <h2 id="stopwatch">00:00:00.000</h2>
+    <button id="startStopBtn" onclick="stopwatch.startStop()">시작</button>
+    <button id="resetBtn" onclick="stopwatch.reset()">리셋</button>
+
+    <script>
+        const stopwatch = {
+            interval: null,
+            startTime: null,
+            elapsedTime: 0,
+            running: false,
+
+            startStop: function() {
+                if (!this.running) {
+                    // 스톱워치 시작
+                    this.startTime = Date.now() - this.elapsedTime;
+                    this.interval = setInterval(this.update, 10);
+                    document.getElementById('startStopBtn').textContent = '중지';
+                    this.running = true;
+                } else {
+                    // 스톱워치 중지
+                    this.elapsedTime = Date.now() - this.startTime;
+                    clearInterval(this.interval);
+                    document.getElementById('startStopBtn').textContent = '시작';
+                    this.running = false;
+                }
+            },
+
+            reset: function() {
+                clearInterval(this.interval);
+                this.elapsedTime = 0;
+                this.running = false;
+                document.getElementById('stopwatch').textContent = '00:00:00.000';
+                document.getElementById('startStopBtn').textContent = '시작';
+            },
+
+            update: function() {
+                const now = Date.now();
+                const elapsedTime = now - stopwatch.startTime;
+                const time = new Date(elapsedTime);
+                document.getElementById('stopwatch').textContent = 
+                    ('0' + time.getUTCHours()).slice(-2) + ':' +
+                    ('0' + time.getUTCMinutes()).slice(-2) + ':' +
+                    ('0' + time.getUTCSeconds()).slice(-2) + '.' +
+                    ('00' + time.getUTCMilliseconds()).slice(-3);
+            }
+        };
+    </script>
+</body>
+</html>
