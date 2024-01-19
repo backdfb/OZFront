@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #image {
+            width: 50%;
+            height: 50vh;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">이미지 바꾸기</h1>
+    <div id="image"></div>
+
+    <script>
+        const urls = [
+            "url(comedy.png)",
+            "url(dog.jpg)",
+            "url(talk.jpeg)",
+        ];
+
+        let currentIndex = 0;
+
+        function changeBackgroundImage() {
+            const image = document.getElementById("image");
+            image.style.backgroundImage = urls[currentIndex];
+
+            currentIndex++;
+            if(currentIndex === urls.length) {
+                currentIndex = 0;
+            }
+        }
+
+        setInterval(changeBackgroundImage, 5000);
+
+    </script>
+</body>
+</html>
