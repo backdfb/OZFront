@@ -22,7 +22,7 @@ function question(n, m) {
     let result = 0;
     let winning = [];
 
-    for(let i = 1; i <= 10; i++) {  // 횟수?
+    for(let i = 1; i <= 10; i++) { 
         let lucky = Math.floor(Math.random() * 9) + 1; 
 
         if (lucky === n ) {
