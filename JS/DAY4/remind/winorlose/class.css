@@ -1,0 +1,36 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.image_area {
+    display: flex;
+    justify-content: center;
+}
+
+.score {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.computer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.button_area {
+    display: flex;
+    justify-content: center;
+}
+
+.reset_end {
+    display: flex;
+    justify-content: center;
+}
+
+.user {
+    display: flex;
+    justify-content: center;
+}
