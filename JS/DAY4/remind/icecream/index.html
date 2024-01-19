@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #iceCreamList {
+            list-style: none;
+            display: flex;
+        }
+        
+        #iceCreamList li {
+            margin: 5px; /* 아이템 간 간격을 설정 */
+        }
+    </style>
+</head>
+<body>
+    <button id="ice_add">아이스크림 종류 추가</button>
+    <button id="ice_name">아이스크림 이름 출력</button>
+    <button id="ice_list">입력한 아이스크림 목록 출력</button>
+    <h1>입력한 아이스크림 목록</h1>
+
+    <ul id="iceCreamList"></ul>
+
+    <script>
+        const iceCreams = [];
+
+        const addButton = document.getElementById("ice_add");
+        const nameButton = document.getElementById("ice_name");
+        const listButton = document.getElementById("ice_list");
+
+        addButton.addEventListener("click", addIceCream);
+        nameButton.addEventListener("click", printIceCreamName);
+        listButton.addEventListener("click", displayIceCreams);
+
+        function addIceCream() {
+            const input = prompt("아이스크림 종류를 추가해주세요.");
+            if (input) {
+                iceCreams.push(input);
+            }
+        }
+
+        function printIceCreamName() {
+            if (iceCreams.length > 0) {
+                const randomIndex = Math.floor(Math.random() * iceCreams.length);
+                const randomIceCream = iceCreams[randomIndex];
+                alert(`랜덤 아이스크림: ${randomIceCream}`);
+            } else {
+                alert("아이스크림 목록이 비어있습니다.");
+            }
+        }
+
+        function displayIceCreams() {
+            const iceCreamList = document.getElementById("iceCreamList");
+            iceCreamList.innerHTML = ""; 
+
+            for (let i = 0; i < iceCreams.length; i++) {
+                const iceCream = iceCreams[i];
+                const listItem = document.createElement("li");
+                listItem.textContent = iceCream;
+                iceCreamList.appendChild(listItem);
+            }
+        }
+    </script>
+</body>
+</html>
