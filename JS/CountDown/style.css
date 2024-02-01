@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
+
+body {
+    background-image: linear-gradient(to bottom, black, gray, darkgray, white);
+}
+.count {
+    color:white;
+    text-align: center;
+    font-family: 'Sixtyfour', sans-serif;
+    margin-top: 330px;
+    margin-left: 630px;
+    margin-bottom: 270px;
+    width: 450px; 
+    height: 460x; 
+}
+
+.count h3 {
+    font-size: 40px; 
+}
+
+.count h1 {
+    font-size: 64px; 
+}
+
+#timer {
+    text-align: center;
+    font-family: 'Sixtyfour', sans-serif;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#timer span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    color:white;
+    background-color: #000;
+    border-radius: 5px;
+    width: 100px;
+    height: 70px;
+}
+
+.footer {
+    margin-bottom: 140px;
+    margin-top: 40px;
+}

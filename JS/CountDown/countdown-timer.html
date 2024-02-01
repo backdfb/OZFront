@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/oz_icon.png" />
+    <title>오즈코딩스쿨 | 카운트다운 타이머</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .footer {
+        font-size: 12px;
+        text-align: center;
+      }
+      .footer a {
+        color: hsl(282, 100%, 21%);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body> 
+    <div class="count">
+      <h3>CountDown</h3>
+      <h1>TIMER</h1>
+    </div>
+    <div id="timer">
+      <span id="days">00</span> Days
+      <span id="hours">00</span> Hour
+      <span id="minutes">00</span> Minute
+      <span id="seconds">00</span> Second
+    </div>  
+    <script>
+      const targetDate = new Date(2024, 6, 25, 0, 0, 0); // 타깃 날짜 설정 (YYYY, MM (0부터 시작), DD, HH, MM, SS)
+
+      // 타이머 업데이트 함수
+      function updateTimer() {
+          // 현재 시간 가져오기
+          const currentDate = new Date();
+
+          // 남은 시간 계산 (밀리초 단위)
+          const remainingTime = targetDate - currentDate;
+
+          // 남은 시간을 일, 시, 분, 초로 변환
+          const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+          // HTML 요소 업데이트
+          document.getElementById('days').textContent = formatTime(days);
+          document.getElementById('hours').textContent = formatTime(hours);
+          document.getElementById('minutes').textContent = formatTime(minutes);
+          document.getElementById('seconds').textContent = formatTime(seconds);
+      }
+
+      // 시간이 한 자리 수일 경우 앞에 0을 붙여주는 함수
+      function formatTime(time) {
+          return time < 10 ? `0${time}` : time;
+      }
+
+      // 초기 타이머 업데이트
+      updateTimer();
+
+      // 1초마다 타이머 업데이트
+      setInterval(updateTimer, 1000);
+    </script>
+
+    <br>
+
+    <div class="footer">
+      © 2023. <a href="https://ozcodingschool.com/" target="_blank">ozcodingschool</a>. All rights
+      reserved. Developed by <a href="#">[김효중 a.k.a backdfb]</a>.
+    </div>
+  </body>
+</html>
